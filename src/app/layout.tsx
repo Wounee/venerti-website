@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
-
+import { Analytics } from "@vercel/analytics/next"
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
