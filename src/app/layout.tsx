@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Venerti Web Design — Votre présence digitale, faite pour durer",
+  title: "Venerti Web — Votre présence digitale, faite pour durer",
   description:
     "Agence web marocaine spécialisée en création de sites web professionnels, e-commerce et solutions digitales sur mesure.",
   keywords:

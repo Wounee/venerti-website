@@ -111,7 +111,7 @@ export default function Hero() {
             }}
           >
             Nous créons des expériences digitales sur mesure pour les entreprises,
-            freelances et startups marocaines qui veulent se démarquer en ligne.
+            freelances et startups qui veulent se démarquer en ligne.
           </motion.p>
 
           {/* Buttons */}
