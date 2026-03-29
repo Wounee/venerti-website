@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import clientPromise from "@/lib/mongodb";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nom trop court").max(100),
   email: z.string().email("Email invalide"),
   phone: z.string().optional(),
   subject: z.string().min(3).max(200),
-  message: z.string().min(10, "Message trop court").max(2000),
+  message: z.string().min(10, "Message trop Court").max(2000),
 });
 
 const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
@@ -31,7 +34,7 @@ export async function POST(req: NextRequest) {
     const ip = req.headers.get("x-forwarded-for") ?? "unknown";
     if (!rateLimit(ip)) {
       return NextResponse.json(
-        { error: "Trop de requêtes. Réessayez dans une minute." },
+        { error: "Trop de requetes. Reessayez dans une minute." },
         { status: 429 }
       );
     }
@@ -48,12 +51,13 @@ export async function POST(req: NextRequest) {
 
     const { name, email, phone, subject, message } = result.data;
 
+    // Save to MongoDB
     const client = await clientPromise;
     const db = client.db("venerti");
     await db.collection("contacts").insertOne({
       name,
       email,
-      phone: phone || "Non renseigné",
+      phone: phone || "Non renseigne",
       subject,
       message,
       createdAt: new Date(),
@@ -61,15 +65,56 @@ export async function POST(req: NextRequest) {
       ip,
     });
 
+    // Send email via Resend
+    await resend.emails.send({
+      from: "Venerti Contact <onboarding@resend.dev>",
+      to: process.env.CONTACT_EMAIL!,
+      subject: `Nouveau message : ${subject}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f8fdf9; border-radius: 16px;">
+          <div style="background: #1B7A3E; padding: 24px 32px; border-radius: 12px; margin-bottom: 24px;">
+            <h1 style="color: white; margin: 0; font-size: 20px;">Nouveau message — Venerti</h1>
+          </div>
+          <div style="background: white; padding: 24px 32px; border-radius: 12px; border: 1px solid #e8f5ed;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 12px 0; color: #888; font-size: 13px; width: 120px;">Nom</td>
+                <td style="padding: 12px 0; color: #111; font-weight: 600;">${name}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 12px 0; color: #888; font-size: 13px;">Email</td>
+                <td style="padding: 12px 0; color: #111; font-weight: 600;">${email}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 12px 0; color: #888; font-size: 13px;">Telephone</td>
+                <td style="padding: 12px 0; color: #111; font-weight: 600;">${phone || "Non renseigne"}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 12px 0; color: #888; font-size: 13px;">Sujet</td>
+                <td style="padding: 12px 0; color: #111; font-weight: 600;">${subject}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; color: #888; font-size: 13px; vertical-align: top;">Message</td>
+                <td style="padding: 12px 0; color: #111; line-height: 1.7;">${message}</td>
+              </tr>
+            </table>
+          </div>
+          <p style="color: #aaa; font-size: 12px; text-align: center; margin-top: 24px;">
+            Recu via venertiweb.com — ${new Date().toLocaleString("fr-FR")}
+          </p>
+        </div>
+      `,
+    });
+
     return NextResponse.json(
-      { success: true, message: "Message reçu. On vous répond dans 24h." },
+      { success: true, message: "Message recu. On vous repond dans 24h." },
       { status: 200 }
     );
 
   } catch (error) {
     console.error("Contact API error:", error);
     return NextResponse.json(
-      { error: "Erreur serveur. Réessayez." },
+      { error: "Erreur serveur. Reessayez." },
       { status: 500 }
     );
   }
