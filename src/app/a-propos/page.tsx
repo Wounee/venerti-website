@@ -25,17 +25,24 @@ export default function AProposPage() {
             color: "#888", fontSize: "17px", lineHeight: 1.8,
             maxWidth: "580px", margin: "0 auto",
           }}>
-            Venerti est fondée par Amine et Youness, deux entrepreneurs marocains de 20 ans
-            passionnés par le web, le design et la technologie. Notre mission : aider les
-            entreprises marocaines à grandir en ligne avec des sites web qui convertissent vraiment.
+            Venerti est fondée par deux jeunes entrepreneurs passionnés par le web, le design et la technologie. Notre approche est simple — créer des expériences digitales qui ont un impact réel sur la croissance de nos clients.
           </p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginBottom: "80px" }} className="apropos-grid">
           {[
-            { title: "Notre Mission", desc: "Aider chaque entrepreneur marocain à avoir une présence digitale professionnelle, accessible et performante." },
-            { title: "Notre Vision", desc: "Devenir l'agence web de référence au Maroc et en Afrique francophone d'ici 2028." },
-            { title: "Nos Valeurs", desc: "Qualité, transparence, respect des délais et support humain. On livre ce qu'on promet." },
+            {
+              title: "Notre Mission",
+              desc: "Aider chaque entrepreneur et chaque entreprise à construire une présence digitale professionnelle, performante et qui convertit vraiment."
+            },
+            {
+              title: "Notre Vision",
+              desc: "Devenir l'agence web de référence pour les entrepreneurs ambitieux qui veulent se démarquer en ligne et scaler leur business."
+            },
+            {
+              title: "Nos Valeurs",
+              desc: "Qualité sans compromis, transparence totale, respect des délais et support humain réactif. On livre ce qu'on promet, toujours."
+            },
           ].map((item) => (
             <div key={item.title} style={{
               backgroundColor: "#F8FDF9", borderRadius: "20px",
@@ -62,7 +69,10 @@ export default function AProposPage() {
             backgroundColor: "rgba(27,122,62,0.3)", filter: "blur(60px)",
           }} />
           <div style={{ position: "relative", zIndex: 1 }}>
-            <h2 style={{ fontSize: "32px", fontWeight: 800, color: "white", marginBottom: "16px", letterSpacing: "-0.5px" }}>
+            <h2 style={{
+              fontSize: "32px", fontWeight: 800, color: "white",
+              marginBottom: "16px", letterSpacing: "-0.5px",
+            }}>
               Vous avez un projet en tête ?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "16px", marginBottom: "32px" }}>

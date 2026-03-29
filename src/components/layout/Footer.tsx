@@ -13,10 +13,7 @@ const navLinks = [
 const services = [
   "Site Vitrine",
   "E-commerce",
-  "Landing Page",
-  "SEO & Référencement",
   "Maintenance",
-  "Identité Visuelle",
 ];
 
 export default function Footer() {
