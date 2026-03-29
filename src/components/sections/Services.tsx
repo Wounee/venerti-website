@@ -8,7 +8,7 @@ import Link from "next/link";
 const services = [
   {
     icon: Monitor,
-    title: "Site Vitrine",
+    title: "Site Web",
     desc: "Un site professionnel qui reflète votre image de marque et convertit vos visiteurs en clients.",
     features: ["Design sur mesure", "100% responsive", "SEO optimisé", "Livraison rapide"],
   },
@@ -17,24 +17,6 @@ const services = [
     title: "E-commerce",
     desc: "Une boutique en ligne complète avec gestion des produits, paiements et tableau de bord.",
     features: ["Paiement sécurisé", "Gestion catalogue", "Dashboard admin", "Multi-langues"],
-  },
-  {
-    icon: Smartphone,
-    title: "Landing Page",
-    desc: "Une page de conversion optimisée pour vos campagnes publicitaires Google et Meta.",
-    features: ["Conversion maximale", "A/B testing ready", "Chargement ultra rapide", "Intégration CRM"],
-  },
-  {
-    icon: Search,
-    title: "SEO & Visibilité",
-    desc: "Apparaissez en première page de Google et attirez des clients locaux qualifiés.",
-    features: ["Audit SEO complet", "Google My Business", "Mots-clés locaux", "Rapport mensuel"],
-  },
-  {
-    icon: Paintbrush,
-    title: "Identité Visuelle",
-    desc: "Logo, charte graphique et supports de communication pour une image cohérente.",
-    features: ["Logo vectoriel", "Charte graphique", "Formats réseaux", "Fichiers sources"],
   },
   {
     icon: Wrench,

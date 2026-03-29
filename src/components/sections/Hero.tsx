@@ -54,27 +54,6 @@ export default function Hero() {
       }}>
         <div style={{ maxWidth: "800px" }}>
 
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: "8px",
-              backgroundColor: "rgba(27,122,62,0.2)",
-              border: "1px solid rgba(27,122,62,0.4)",
-              borderRadius: "999px", padding: "8px 16px", marginBottom: "32px",
-            }}
-          >
-            <span style={{
-              width: "8px", height: "8px", borderRadius: "50%",
-              backgroundColor: "#52C27A",
-              animation: "pulse 2s infinite",
-            }} />
-            <span style={{ color: "#52C27A", fontSize: "14px", fontWeight: 500 }}>
-              Agence Web — Maroc
-            </span>
-          </motion.div>
 
           {/* Heading */}
           <motion.h1
@@ -92,9 +71,8 @@ export default function Hero() {
           >
             Votre site web
             <br />
-            <span style={{ color: "#52C27A" }}>professionnel,</span>
+            <span style={{ color: "#52C27A" }}>professionnel</span>
             <br />
-            livré en 21 jours.
           </motion.h1>
 
           {/* Sub */}
@@ -152,7 +130,7 @@ export default function Hero() {
             style={{ display: "flex", gap: "48px", flexWrap: "wrap" }}
           >
             {[
-              { value: "21j", label: "Délai de livraison" },
+              { value: "Flexible", label: "Délai de livraison" },
               { value: "100%", label: "Satisfaction client" },
               { value: "50+", label: "Projets livrés" },
               { value: "24/7", label: "Support inclus" },

@@ -110,7 +110,7 @@ export default function ContactPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "48px" }} className="contact-info-grid">
           {[
             { icon: Mail, label: "Email", value: "contact@venerti.com", href: "mailto:contact@venerti.com" },
-            { icon: MapPin, label: "Localisation", value: "Maroc", href: null },
+          
           ].map(({ icon: Icon, label, value, href }) => (
             <div key={label} style={{
               backgroundColor: "white", borderRadius: "16px",

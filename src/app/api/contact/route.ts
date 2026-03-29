@@ -5,6 +5,7 @@ import clientPromise from "@/lib/mongodb";
 const contactSchema = z.object({
   name: z.string().min(2, "Nom trop court").max(100),
   email: z.string().email("Email invalide"),
+  phone: z.string().optional(),
   subject: z.string().min(3).max(200),
   message: z.string().min(10, "Message trop court").max(2000),
 });
@@ -16,12 +17,10 @@ function rateLimit(ip: string): boolean {
   const windowMs = 60 * 1000;
   const maxRequests = 3;
   const record = rateLimitMap.get(ip);
-
   if (!record || now - record.lastReset > windowMs) {
     rateLimitMap.set(ip, { count: 1, lastReset: now });
     return true;
   }
-
   if (record.count >= maxRequests) return false;
   record.count++;
   return true;
@@ -47,14 +46,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { name, email, subject, message } = result.data;
+    const { name, email, phone, subject, message } = result.data;
 
-    // Sauvegarde dans MongoDB
     const client = await clientPromise;
     const db = client.db("venerti");
     await db.collection("contacts").insertOne({
       name,
       email,
+      phone: phone || "Non renseigné",
       subject,
       message,
       createdAt: new Date(),
