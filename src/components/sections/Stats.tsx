@@ -29,7 +29,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, value]);
 
   return (
-    <span ref={ref} className="text-4xl md:text-5xl font-bold text-[#1B7A3E]">
+    <span ref={ref} style={{ fontSize: "48px", fontWeight: 800, color: "#1B7A3E" }}>
       {count}{suffix}
     </span>
   );
@@ -40,26 +40,34 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 bg-white border-y border-[#E8F5ED]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section style={{ padding: "80px 24px", backgroundColor: "white", borderTop: "1px solid #E8F5ED", borderBottom: "1px solid #E8F5ED" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+        <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }} className="stats-grid">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center p-6 rounded-2xl hover:bg-[#E8F5ED] transition-colors duration-300 group"
+              style={{
+                textAlign: "center", padding: "32px 16px",
+                borderRadius: "20px", transition: "background 0.3s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#F8FDF9")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "transparent")}
             >
               <Counter value={stat.value} suffix={stat.suffix} />
-              <div className="mt-3">
-                <p className="font-semibold text-gray-800 text-sm">{stat.label}</p>
-                <p className="text-gray-400 text-xs mt-1">{stat.desc}</p>
-              </div>
+              <p style={{ fontWeight: 700, color: "#111", fontSize: "15px", marginTop: "8px" }}>{stat.label}</p>
+              <p style={{ color: "#aaa", fontSize: "13px", marginTop: "4px" }}>{stat.desc}</p>
             </motion.div>
           ))}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </section>
   );
 }

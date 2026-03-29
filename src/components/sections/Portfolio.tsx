@@ -1,163 +1,128 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { useRef } from "react";
 import Link from "next/link";
 
 const projects = [
   {
-    title: "Argana Restaurant",
-    category: "Site Vitrine",
-    desc: "Site vitrine moderne avec menu digital et réservation en ligne pour un restaurant à Marrakech.",
-    tags: ["Next.js", "Tailwind", "SEO"],
-    color: "#1B7A3E",
-  },
-  {
-    title: "Souk Artisanat",
-    category: "E-commerce",
-    desc: "Boutique en ligne pour artisans marocains avec paiement CMI intégré et gestion catalogue.",
-    tags: ["React", "MongoDB", "CMI"],
-    color: "#145C2F",
-  },
-  {
-    title: "Dr. Benali Clinic",
-    category: "Site Vitrine",
-    desc: "Site professionnel pour cabinet médical avec prise de rendez-vous en ligne intégrée.",
-    tags: ["Next.js", "Calendly", "SEO Local"],
-    color: "#1B7A3E",
-  },
-  {
-    title: "FitMaroc App",
-    category: "Landing Page",
-    desc: "Landing page haute conversion pour une application fitness marocaine. +40% de téléchargements.",
-    tags: ["React", "Framer Motion", "Analytics"],
-    color: "#145C2F",
-  },
-  {
-    title: "Immo Premium",
+    title: "Skizzly",
     category: "Application Web",
-    desc: "Plateforme immobilière avec recherche avancée, filtres et estimation automatique de prix.",
-    tags: ["Next.js", "Python", "MongoDB"],
+    desc: "Plateforme innovante d'échange de compétences entre utilisateurs. Matching intelligent, profils détaillés et système de réputation intégré.",
+    tags: ["Next.js", "MongoDB", "Python"],
     color: "#1B7A3E",
   },
   {
-    title: "CoachPro Maroc",
-    category: "Landing Page",
-    desc: "Site personal branding pour coach business avec tunnel de vente et intégration CRM.",
-    tags: ["Next.js", "Stripe", "HubSpot"],
+    title: "e-Gouvernance Berrechid",
+    category: "Plateforme Citoyenne",
+    desc: "Plateforme de réclamations citoyennes avec dashboard admin et traitement automatisé des demandes par intelligence artificielle.",
+    tags: ["React", "FastAPI", "AI"],
     color: "#145C2F",
   },
 ];
 
-const categories = ["Tous", "Site Vitrine", "E-commerce", "Landing Page", "Application Web"];
-
 export default function Portfolio() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [active, setActive] = useState("Tous");
-
-  const filtered = active === "Tous" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="py-24 bg-white" id="portfolio">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
+    <section style={{ padding: "100px 24px", backgroundColor: "white" }} id="portfolio">
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          style={{ textAlign: "center", marginBottom: "64px" }}
         >
-          <span className="inline-block bg-[#E8F5ED] text-[#1B7A3E] text-sm font-semibold px-4 py-2 rounded-full mb-4 tracking-wide">
+          <span style={{
+            display: "inline-block", backgroundColor: "#E8F5ED",
+            color: "#1B7A3E", fontSize: "11px", fontWeight: 700,
+            padding: "6px 16px", borderRadius: "999px",
+            letterSpacing: "2.5px", marginBottom: "20px",
+          }}>
             NOS RÉALISATIONS
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+          <h2 style={{
+            fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 800,
+            color: "#111", lineHeight: 1.15, marginBottom: "16px",
+            letterSpacing: "-0.5px",
+          }}>
             Des projets qui parlent
             <br />
-            <span className="text-[#1B7A3E]">d'eux-mêmes</span>
+            <span style={{ color: "#1B7A3E" }}>d&apos;eux-mêmes</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto">
+          <p style={{ color: "#888", fontSize: "17px", maxWidth: "480px", margin: "0 auto" }}>
             Chaque projet est unique. Voici une sélection de nos réalisations récentes.
           </p>
         </motion.div>
 
-        {/* Filters */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                active === cat
-                  ? "bg-[#1B7A3E] text-white shadow-md"
-                  : "bg-[#F8FDF9] text-gray-600 hover:bg-[#E8F5ED] hover:text-[#1B7A3E]"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((project, i) => (
+        {/* Projects — 2 large cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px" }} className="portfolio-grid">
+          {projects.map((project, i) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group relative bg-[#F8FDF9] rounded-2xl overflow-hidden border border-gray-100 hover:border-[#1B7A3E]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.15 }}
+              style={{
+                backgroundColor: "#F8FDF9", borderRadius: "24px",
+                border: "1px solid #F0F0F0", overflow: "hidden",
+                transition: "all 0.3s",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = "rgba(27,122,62,0.3)";
+                e.currentTarget.style.boxShadow = "0 12px 48px rgba(27,122,62,0.1)";
+                e.currentTarget.style.transform = "translateY(-6px)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = "#F0F0F0";
+                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
             >
-              {/* Color block placeholder */}
-              <div
-                className="h-48 flex items-center justify-center relative overflow-hidden"
-                style={{ backgroundColor: project.color }}
-              >
-                <div className="absolute inset-0 opacity-10">
-                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              {/* Visual */}
+              <div style={{
+                height: "240px", backgroundColor: project.color,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                position: "relative", overflow: "hidden",
+              }}>
+                <div style={{ position: "absolute", inset: 0, opacity: 0.1 }}>
+                  <svg style={{ width: "100%", height: "100%" }} xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                      <pattern id={`grid-${i}`} width="30" height="30" patternUnits="userSpaceOnUse">
-                        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="white" strokeWidth="0.5" />
+                      <pattern id={`g${i}`} width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
                       </pattern>
                     </defs>
-                    <rect width="100%" height="100%" fill={`url(#grid-${i})`} />
+                    <rect width="100%" height="100%" fill={`url(#g${i})`} />
                   </svg>
                 </div>
-                <svg viewBox="0 0 60 60" className="w-16 h-16 opacity-30">
-                  <polygon points="0,30 30,0 30,60" fill="#145C2F" />
-                  <polygon points="60,30 30,0 30,60" fill="white" fillOpacity="0.5" />
-                  <polygon points="30,15 18,40 30,47 42,40" fill={project.color} />
-                </svg>
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                    <ExternalLink size={16} className="text-white" />
-                  </div>
+                <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+                  <svg viewBox="0 0 60 60" style={{ width: "64px", height: "64px", opacity: 0.3 }}>
+                    <polygon points="0,30 30,0 30,60" fill="white" />
+                    <polygon points="60,30 30,0 30,60" fill="white" fillOpacity="0.6" />
+                    <polygon points="30,15 18,40 30,47 42,40" fill={project.color} />
+                  </svg>
+                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px", marginTop: "12px", letterSpacing: "2px", fontWeight: 600 }}>
+                    {project.category.toUpperCase()}
+                  </p>
                 </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <span className="text-[#1B7A3E] text-xs font-semibold uppercase tracking-wider">
-                      {project.category}
-                    </span>
-                    <h3 className="font-bold text-gray-900 text-lg mt-0.5">{project.title}</h3>
-                  </div>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{project.desc}</p>
-                <div className="flex flex-wrap gap-2">
+              <div style={{ padding: "32px" }}>
+                <h3 style={{ fontWeight: 800, fontSize: "22px", color: "#111", marginBottom: "12px" }}>
+                  {project.title}
+                </h3>
+                <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.8, marginBottom: "20px" }}>
+                  {project.desc}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-[#E8F5ED] text-[#1B7A3E] text-xs font-medium px-3 py-1 rounded-full"
-                    >
+                    <span key={tag} style={{
+                      backgroundColor: "#E8F5ED", color: "#1B7A3E",
+                      fontSize: "12px", fontWeight: 600,
+                      padding: "5px 14px", borderRadius: "999px",
+                    }}>
                       {tag}
                     </span>
                   ))}
@@ -167,15 +132,23 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 border-2 border-[#1B7A3E] text-[#1B7A3E] hover:bg-[#1B7A3E] hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
-          >
-            Voir tout le portfolio
+        <div style={{ textAlign: "center", marginTop: "56px" }}>
+          <Link href="/contact" style={{
+            display: "inline-flex", alignItems: "center", gap: "8px",
+            border: "2px solid #1B7A3E", color: "#1B7A3E",
+            fontWeight: 600, fontSize: "15px",
+            padding: "14px 36px", borderRadius: "999px",
+            textDecoration: "none",
+          }}>
+            Démarrer un projet
           </Link>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 700px) {
+          .portfolio-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }

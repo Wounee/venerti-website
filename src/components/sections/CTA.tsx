@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function CTA() {
   const ref = useRef(null);
@@ -40,116 +40,54 @@ export default function CTA() {
           </div>
 
           {/* Glow */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "300px",
-              height: "150px",
-              backgroundColor: "rgba(27,122,62,0.3)",
-              filter: "blur(60px)",
-            }}
-          />
+          <div style={{
+            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
+            width: "300px", height: "150px",
+            backgroundColor: "rgba(27,122,62,0.3)", filter: "blur(60px)",
+          }} />
 
           <div style={{ position: "relative", zIndex: 10 }}>
-            <span
-              style={{
-                display: "inline-block",
-                backgroundColor: "rgba(27,122,62,0.2)",
-                color: "#52C27A",
-                fontSize: "12px",
-                fontWeight: 600,
-                padding: "6px 16px",
-                borderRadius: "999px",
-                border: "1px solid rgba(27,122,62,0.3)",
-                letterSpacing: "2px",
-                marginBottom: "24px",
-              }}
-            >
+            <span style={{
+              display: "inline-block",
+              backgroundColor: "rgba(27,122,62,0.2)",
+              color: "#52C27A", fontSize: "11px", fontWeight: 700,
+              padding: "6px 16px", borderRadius: "999px",
+              border: "1px solid rgba(27,122,62,0.3)",
+              letterSpacing: "2px", marginBottom: "24px",
+            }}>
               PRET A DEMARRER
             </span>
 
-            <h2
-              style={{
-                fontSize: "clamp(32px, 4vw, 52px)",
-                fontWeight: 800,
-                color: "white",
-                lineHeight: 1.2,
-                marginBottom: "20px",
-                letterSpacing: "-0.5px",
-              }}
-            >
-              Votre site web
-              <br />
+            <h2 style={{
+              fontSize: "clamp(32px, 4vw, 52px)",
+              fontWeight: 800, color: "white",
+              lineHeight: 1.2, marginBottom: "20px",
+              letterSpacing: "-0.5px",
+            }}>
+              Votre site web<br />
               <span style={{ color: "#52C27A" }}>vous attend.</span>
             </h2>
 
-            <p
-              style={{
-                color: "rgba(255,255,255,0.5)",
-                fontSize: "17px",
-                lineHeight: 1.7,
-                maxWidth: "480px",
-                margin: "0 auto 40px",
-              }}
-            >
+            <p style={{
+              color: "rgba(255,255,255,0.5)",
+              fontSize: "17px", lineHeight: 1.7,
+              maxWidth: "480px",
+              margin: "0 auto 40px",
+            }}>
               Obtenez un devis gratuit en 24h. Sans engagement, sans surprise.
               Juste un projet bien fait, livre a temps.
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "16px",
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              {/* Button 1 */}
-              <Link
-                href="/devis"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  backgroundColor: "#1B7A3E",
-                  color: "white",
-                  fontWeight: 600,
-                  fontSize: "15px",
-                  padding: "14px 32px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                }}
-              >
-                Demander un devis gratuit
-                <ArrowRight size={18} />
-              </Link>
-
-              {/* Button 2 FIXED */}
-              <a
-                href="https://wa.me/212600000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  color: "white",
-                  fontWeight: 600,
-                  fontSize: "15px",
-                  padding: "14px 32px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                }}
-              >
-                <MessageCircle size={18} />
-                WhatsApp
-              </a>
-            </div>
+            <Link href="/contact" style={{
+              display: "inline-flex", alignItems: "center", gap: "10px",
+              backgroundColor: "#1B7A3E", color: "white",
+              fontWeight: 700, fontSize: "16px",
+              padding: "16px 40px", borderRadius: "999px",
+              textDecoration: "none",
+            }}>
+              Demander votre devis
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </motion.div>
       </div>
