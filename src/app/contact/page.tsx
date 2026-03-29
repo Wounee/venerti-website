@@ -109,7 +109,7 @@ export default function ContactPage() {
         {/* Info Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "48px" }} className="contact-info-grid">
           {[
-            { icon: Mail, label: "Email", value: "contact@venerti.com", href: "mailto:contact@venerti.com" },
+            { icon: Mail, label: "Email", value: "venertiweb@gmail.com", href: "mailto:venertiweb@gmail.com" },
           
           ].map(({ icon: Icon, label, value, href }) => (
             <div key={label} style={{

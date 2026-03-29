@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
             </Link>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px", lineHeight: 1.8, marginBottom: "24px", maxWidth: "260px" }}>
-              Votre partenaire digital au Maroc. Nous créons des sites web qui convertissent et des expériences qui marquent.
+              Nous créons des expériences digitales qui convertissent et des solutions web qui font la différence.
             </p>
             <div style={{ display: "flex", gap: "10px" }}>
              {[
@@ -119,7 +119,7 @@ export default function Footer() {
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
-                { icon: Mail, value: "contact@venerti.com", href: "mailto:contact@venerti.com" },
+               { icon: Mail, value: "venertiweb@gmail.com", href: "mailto:venertiweb@gmail.com" },
               ].map(({ icon: Icon, value, href }) => (
                 <div key={value} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <Icon size={15} color="#1B7A3E" />
