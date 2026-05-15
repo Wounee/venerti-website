@@ -71,7 +71,7 @@ export default function Hero() {
           >
             Votre site web
             <br />
-            <span style={{ color: "#52C27A" }}>professionnel</span>
+            <span style={{ color: "#52C27A" }}>Professionnel</span>
             <br />
           </motion.h1>
 
