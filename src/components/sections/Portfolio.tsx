@@ -6,6 +6,21 @@ import Link from "next/link";
 
 const projects = [
   {
+  title: "ImmiNexus Consultants",
+  category: "Site Web Immigration",
+  desc: "Site web professionnel pour un cabinet de consultation en immigration avec présentation des services, interface multilingue, système de réservation et confirmation PDF automatisée.",
+  tags: ["Next.js", "React", "Vercel", "PDF", "Multilingual"],
+  accent: "#1B7A3E",
+  bg: "#F0FAF4",
+  screens: [
+    { label: "Page d'accueil", color: "#fff", border: "#d8f0e0" },
+    { label: "Services immigration", color: "#fff", border: "#d8f0e0" },
+    { label: "Réservation consultation", color: "#fff", border: "#d8f0e0" },
+  ],
+  stat1: "3", stat1label: "Langues supportées",
+  stat2: "24/7", stat2label: "Réservation en ligne",
+},
+  {
     title: "Skizzly",
     category: "Application Web",
     desc: "Plateforme innovante d'échange de compétences entre utilisateurs. Matching intelligent, profils détaillés et système de réputation intégré.",
@@ -21,7 +36,7 @@ const projects = [
     stat2: "98%", stat2label: "Match accuracy",
   },
   {
-    title: "e-Gouvernance Berrechid",
+    title: "e-Gouvernance",
     category: "Plateforme Citoyenne",
     desc: "Plateforme de réclamations citoyennes avec dashboard admin et traitement automatisé des demandes par intelligence artificielle.",
     tags: ["React", "FastAPI", "AI"],
@@ -35,6 +50,7 @@ const projects = [
     stat1: "157", stat1label: "Réclamations traitées",
     stat2: "3", stat2label: "Langues supportées",
   },
+  
 ];
 
 export default function Portfolio() {

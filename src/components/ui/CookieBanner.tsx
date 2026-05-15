@@ -40,7 +40,7 @@ export default function CookieBanner() {
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "24px", flexWrap: "wrap" }}>
           <div style={{ flex: 1, minWidth: "260px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-              <span style={{ fontSize: "20px" }}>🍪</span>
+              <span style={{ fontSize: "20px" }}></span>
               <h3 style={{ fontWeight: 700, color: "white", fontSize: "16px", margin: 0 }}>
                 Nous utilisons des cookies
               </h3>
