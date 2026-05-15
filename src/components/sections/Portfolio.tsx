@@ -188,7 +188,7 @@ export default function Portfolio() {
                       width: si === 0 ? "100%" : si === 1 ? "90%" : "80%",
                       backgroundColor: "white",
                       borderRadius: "12px 12px 0 0",
-                      border: `1px solid ${screen.border}`,
+                      border: `1px solid ${screen}`,
                       borderBottom: "none",
                       overflow: "hidden",
                       boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
@@ -199,7 +199,7 @@ export default function Portfolio() {
                       padding: "8px 12px",
                       backgroundColor: "#F5F5F5",
                       display: "flex", alignItems: "center", gap: "6px",
-                      borderBottom: `1px solid ${screen.border}`,
+                      borderBottom: `1px solid ${screen}`,
                     }}>
                       <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#FF5F57" }} />
                       <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#FFBD2E" }} />
@@ -209,7 +209,7 @@ export default function Portfolio() {
                         padding: "3px 10px", fontSize: "10px", color: "#999",
                         marginLeft: "8px",
                       }}>
-                        {screen.label}
+                        {screen}
                       </div>
                     </div>
                     {/* Screen content placeholder */}
@@ -219,7 +219,7 @@ export default function Portfolio() {
                       display: "flex", alignItems: "center", justifyContent: "center",
                     }}>
                       <p style={{ fontSize: "11px", color: project.accent, fontWeight: 600, opacity: 0.7 }}>
-                        {screen.label}
+                        {screen}
                       </p>
                     </div>
                   </div>
