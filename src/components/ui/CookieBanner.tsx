@@ -42,11 +42,12 @@ export default function CookieBanner() {
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
               <span style={{ fontSize: "20px" }}></span>
               <h3 style={{ fontWeight: 700, color: "white", fontSize: "16px", margin: 0 }}>
-                Nous utilisons des cookies
+                We use cookies
               </h3>
             </div>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", lineHeight: 1.7, margin: 0 }}>
-              Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et personnaliser le contenu.
+              We use cookies to improve your experience, analyze traffic, and
+              optimize website performance.
               {" "}
               <button
                 onClick={() => setShowDetails(!showDetails)}
@@ -65,9 +66,21 @@ export default function CookieBanner() {
                 marginTop: "16px", display: "flex", flexDirection: "column", gap: "10px",
               }}>
                 {[
-                  { name: "Essentiels", desc: "Nécessaires au fonctionnement du site. Toujours actifs.", required: true },
-                  { name: "Analytiques", desc: "Google Analytics — nous aide à comprendre comment vous utilisez le site.", required: false },
-                  { name: "Performance", desc: "Mémorisation de vos préférences pour une meilleure expérience.", required: false },
+                  {
+                    name: "Essential Cookies",
+                    desc: "Required for the website to function properly.",
+                    required: true,
+                  },
+                  {
+                    name: "Analytics",
+                    desc: "Helps us understand how visitors interact with the website.",
+                    required: false,
+                  },
+                  {
+                    name: "Performance",
+                    desc: "Improves browsing experience and remembers preferences.",
+                    required: false,
+                  },
                 ].map((cookie) => (
                   <div key={cookie.name} style={{
                     backgroundColor: "rgba(255,255,255,0.05)",
@@ -107,7 +120,7 @@ export default function CookieBanner() {
                 whiteSpace: "nowrap",
               }}
             >
-              Tout accepter
+              Accept All cookies
             </button>
             <button
               onClick={acceptEssential}
@@ -120,7 +133,7 @@ export default function CookieBanner() {
                 cursor: "pointer", whiteSpace: "nowrap",
               }}
             >
-              Essentiels uniquement
+              Essential only
             </button>
           </div>
         </div>

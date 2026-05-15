@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "100%", label: "Clients satisfaits" },
-  { value: "21j", label: "Délai moyen de livraison" },
-  { value: "24/7", label: "Support disponible" },
-  { value: "50+", label: "Projets livrés" },
+  { value: "100%", label: "Responsive layouts" },
+  { value: "21 days", label: "Average delivery" },
+  { value: "24/7", label: "Online availability" },
+  { value: "3+", label: "Core services" },
 ];
 
 export default function Testimonials() {
@@ -32,19 +32,20 @@ export default function Testimonials() {
             border: "1px solid rgba(27,122,62,0.3)",
             letterSpacing: "2.5px", marginBottom: "20px",
           }}>
-            POURQUOI VENERTI
+            Why Choose Venerti
           </span>
           <h2 style={{
             fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 800,
             color: "white", lineHeight: 1.15, marginBottom: "16px",
             letterSpacing: "-0.5px",
           }}>
-            La qualité comme
+             Built with 
             <br />
-            <span style={{ color: "#52C27A" }}>engagement.</span>
+            <span style={{ color: "#52C27A" }}>quality.</span>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "17px", maxWidth: "480px", margin: "0 auto" }}>
-            Des résultats concrets, des projets livrés à temps, un support humain réactif.
+            Modern websites, reliable delivery, and clear support designed to
+            help your business grow online.
           </p>
         </motion.div>
 
@@ -76,9 +77,18 @@ export default function Testimonials() {
         {/* Values */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginTop: "24px" }} className="values-grid">
           {[
-            { title: "Livraison garantie", desc: "On s'engage sur des délais réels et on les respecte. Toujours." },
-            { title: "Code de qualité", desc: "Sites rapides, sécurisés, optimisés SEO. Lighthouse score 90+ garanti." },
-            { title: "Support humain", desc: "Une vraie équipe disponible, pas un chatbot. On répond en moins de 24h." },
+            {
+              title: "Reliable Delivery",
+              desc: "Clear timelines, organized workflow, and consistent communication from start to launch.",
+            },
+            {
+              title: "Quality Development",
+              desc: "Fast, secure, SEO-friendly websites built with clean code and modern best practices.",
+            },
+            {
+              title: "Human Support",
+              desc: "Real support when you need updates, improvements, maintenance, or technical guidance.",
+            },
           ].map((v, i) => (
             <motion.div
               key={v.title}

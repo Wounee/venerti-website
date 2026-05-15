@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Accueil" },
+  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/a-propos", label: "À Propos" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -124,7 +124,7 @@ export default function Navbar() {
               display: "inline-block",
             }}
           >
-            Devis Gratuit
+            Free Quote
           </Link>
         </div>
 
@@ -190,7 +190,7 @@ export default function Navbar() {
                   marginTop: "8px",
                 }}
               >
-                Devis Gratuit
+                Free Quote
               </Link>
             </div>
           </motion.div>

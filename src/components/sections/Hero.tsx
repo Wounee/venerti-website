@@ -69,9 +69,9 @@ export default function Hero() {
               letterSpacing: "-1px",
             }}
           >
-            Votre site web
+            Your professional website
             <br />
-            <span style={{ color: "#52C27A" }}>Professionnel</span>
+            <span style={{ color: "#52C27A" }}>built to last</span>
             <br />
           </motion.h1>
 
@@ -88,8 +88,8 @@ export default function Hero() {
               maxWidth: "560px",
             }}
           >
-            Nous créons des expériences digitales sur mesure pour les entreprises,
-            freelances et startups qui veulent se démarquer en ligne.
+            We create modern, responsive, and conversion-focused websites for businesses,
+            freelancers, and startups that want to stand out online.
           </motion.p>
 
           {/* Buttons */}
@@ -107,7 +107,7 @@ export default function Hero() {
               textDecoration: "none",
               transition: "background-color 0.2s",
             }}>
-              Démarrer mon projet
+              Start Your Project
               <ArrowRight size={18} />
             </Link>
             <Link href="/portfolio" style={{
@@ -118,7 +118,7 @@ export default function Hero() {
               padding: "14px 32px", borderRadius: "999px",
               textDecoration: "none",
             }}>
-              Voir nos réalisations
+              View Our Work
             </Link>
           </motion.div>
 
@@ -130,10 +130,10 @@ export default function Hero() {
             style={{ display: "flex", gap: "48px", flexWrap: "wrap" }}
           >
             {[
-              { value: "Flexible", label: "Délai de livraison" },
-              { value: "100%", label: "Satisfaction client" },
-              { value: "50+", label: "Projets livrés" },
-              { value: "24/7", label: "Support inclus" },
+              { value: "Fast", label: "Project delivery" },
+              { value: "Modern", label: "Web experiences" },
+              { value: "Responsive", label: "Mobile-first design" },
+              { value: "24/7", label: "Online presence" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div style={{ fontSize: "32px", fontWeight: 800, color: "#52C27A" }}>{stat.value}</div>

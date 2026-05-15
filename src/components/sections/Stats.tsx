@@ -4,10 +4,30 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projets livrés", desc: "Sites web, e-commerces, apps" },
-  { value: 21, suffix: "j", label: "Délai moyen", desc: "De la signature à la mise en ligne" },
-  { value: 100, suffix: "%", label: "Clients satisfaits", desc: "Taux de satisfaction global" },
-  { value: 3, suffix: "x", label: "ROI moyen client", desc: "Retour sur investissement constaté" },
+  {
+    value: 24,
+    suffix: "/7",
+    label: "Online Presence",
+    desc: "Websites available anytime, on any device",
+  },
+  {
+    value: 21,
+    suffix: " days",
+    label: "Average Delivery",
+    desc: "From project kickoff to launch",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Responsive Design",
+    desc: "Built for mobile, tablet, and desktop",
+  },
+  {
+    value: 3,
+    suffix: "+",
+    label: "Core Services",
+    desc: "Websites, e-commerce, and maintenance",
+  },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {

@@ -55,7 +55,7 @@ export default function CTA() {
               border: "1px solid rgba(27,122,62,0.3)",
               letterSpacing: "2px", marginBottom: "24px",
             }}>
-              PRET A DEMARRER
+              Ready to get started?
             </span>
 
             <h2 style={{
@@ -64,8 +64,8 @@ export default function CTA() {
               lineHeight: 1.2, marginBottom: "20px",
               letterSpacing: "-0.5px",
             }}>
-              Votre site web<br />
-              <span style={{ color: "#52C27A" }}>vous attend.</span>
+              Your next website<br />
+              <span style={{ color: "#52C27A" }}> starts here.</span>
             </h2>
 
             <p style={{
@@ -74,8 +74,8 @@ export default function CTA() {
               maxWidth: "480px",
               margin: "0 auto 40px",
             }}>
-              Obtenez un devis gratuit en 24h. Sans engagement, sans surprise.
-              Juste un projet bien fait, livre a temps.
+              Get a free quote within 24 hours. No commitment, no hidden fees —
+              just a modern website designed to help your business grow online.
             </p>
 
             <Link href="/contact" style={{
@@ -85,7 +85,7 @@ export default function CTA() {
               padding: "16px 40px", borderRadius: "999px",
               textDecoration: "none",
             }}>
-              Demander votre devis
+              Get Your Free Quote
               <ArrowRight size={18} />
             </Link>
           </div>

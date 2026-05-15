@@ -5,15 +5,15 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/a-propos", label: "À Propos" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/devis", label: "Devis Gratuit" },
+  { href: "/quote", label: "Free Quote" },
 ];
 
 const services = [
-  "Site Vitrine",
-  "E-commerce",
-  "Maintenance",
+  "Business Website",
+  "E-Commerce",
+  "Maintenance & Support",
 ];
 
 export default function Footer() {
@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
             </Link>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px", lineHeight: 1.8, marginBottom: "24px", maxWidth: "260px" }}>
-              Nous créons des expériences digitales qui convertissent et des solutions web qui font la différence.
+              We build modern digital experiences and high-performance websites designed to help businesses grow online.
             </p>
             <div style={{ display: "flex", gap: "10px" }}>
              {[
@@ -138,7 +138,7 @@ export default function Footer() {
               padding: "10px 22px", borderRadius: "999px",
               textDecoration: "none",
             }}>
-              Devis Gratuit
+              Free Quote
             </Link>
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function Footer() {
           flexWrap: "wrap", gap: "12px",
         }}>
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "13px" }}>
-            © 2026 Venerti Web Design. Tous droits réservés.
+            © 2026 Venerti Web Design. All rights reserved.
           </p>
         </div>
       </div>

@@ -13,9 +13,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Venerti Web Design — Votre présence digitale, faite pour durer",
-  description: "Agence web spécialisée en création de sites web professionnels, e-commerce et solutions digitales sur mesure.",
-  keywords: "agence web, création site web, site web professionnel, e-commerce, web design",
+ title: "Venerti Web Design — Modern websites built for growth",
+description:
+  "Web agency specialized in professional websites, e-commerce platforms, and custom digital solutions for modern businesses.",
+keywords:
+  "web agency, professional website, web design, ecommerce website, modern websites, digital solutions, business website",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

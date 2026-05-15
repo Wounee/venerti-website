@@ -10,38 +10,43 @@ export default function AProposPage() {
             padding: "6px 16px", borderRadius: "999px",
             letterSpacing: "2.5px", marginBottom: "20px",
           }}>
-            À PROPOS
+            ABOUT
           </span>
           <h1 style={{
             fontSize: "clamp(36px, 5vw, 56px)", fontWeight: 800,
             color: "#111", lineHeight: 1.15, marginBottom: "16px",
             letterSpacing: "-1px",
           }}>
-            Deux passionnés,
+            Built by two passionate creators,
             <br />
-            <span style={{ color: "#1B7A3E" }}>une vision digitale.</span>
+            <span style={{ color: "#1B7A3E" }}>a modern digital vision.</span>
           </h1>
           <p style={{
             color: "#888", fontSize: "17px", lineHeight: 1.8,
             maxWidth: "580px", margin: "0 auto",
           }}>
-            Venerti est fondée par deux jeunes entrepreneurs passionnés par le web, le design et la technologie. Notre approche est simple — créer des expériences digitales qui ont un impact réel sur la croissance de nos clients.
+            Venerti was founded by two passionate entrepreneurs driven by web development, design, and technology. Our mission is simple — to create modern digital experiences that have a real impact on our clients’ growth.
           </p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginBottom: "80px" }} className="apropos-grid">
           {[
             {
-              title: "Notre Mission",
-              desc: "Aider chaque entrepreneur et chaque entreprise à construire une présence digitale professionnelle, performante et qui convertit vraiment."
+              title: "Our Mission",
+              desc:
+                "Helping businesses and entrepreneurs build a professional, high-performing digital presence that truly drives growth.",
             },
+
             {
-              title: "Notre Vision",
-              desc: "Devenir l'agence web de référence pour les entrepreneurs ambitieux qui veulent se démarquer en ligne et scaler leur business."
+              title: "Our Vision",
+              desc:
+                "To become a trusted web agency for ambitious brands looking to grow, stand out online, and scale their business.",
             },
+
             {
-              title: "Nos Valeurs",
-              desc: "Qualité sans compromis, transparence totale, respect des délais et support humain réactif. On livre ce qu'on promet, toujours."
+              title: "Our Values",
+              desc:
+                "Quality without compromise, transparency, reliable delivery, and human-centered support. We build what we promise.",
             },
           ].map((item) => (
             <div key={item.title} style={{
@@ -73,10 +78,10 @@ export default function AProposPage() {
               fontSize: "32px", fontWeight: 800, color: "white",
               marginBottom: "16px", letterSpacing: "-0.5px",
             }}>
-              Vous avez un projet en tête ?
+              Ready to start your next project?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "16px", marginBottom: "32px" }}>
-              Parlons-en. Devis gratuit en 24h.
+             Free consultation and quote within 24 hours.
             </p>
             <a href="/contact" style={{
               display: "inline-block",
@@ -85,7 +90,7 @@ export default function AProposPage() {
               padding: "14px 36px", borderRadius: "999px",
               textDecoration: "none",
             }}>
-              Nous contacter
+              Contact Us
             </a>
           </div>
         </div>

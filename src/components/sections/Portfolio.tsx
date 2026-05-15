@@ -6,51 +6,53 @@ import Link from "next/link";
 
 const projects = [
   {
-  title: "ImmiNexus Consultants",
-  category: "Site Web Immigration",
-  desc: "Site web professionnel pour un cabinet de consultation en immigration avec présentation des services, interface multilingue, système de réservation et confirmation PDF automatisée.",
-  tags: ["Next.js", "React", "Vercel", "PDF", "Multilingual"],
-  accent: "#1B7A3E",
-  bg: "#F0FAF4",
-  screens: [
-    { label: "Page d'accueil", color: "#fff", border: "#d8f0e0" },
-    { label: "Services immigration", color: "#fff", border: "#d8f0e0" },
-    { label: "Réservation consultation", color: "#fff", border: "#d8f0e0" },
-  ],
-  stat1: "3", stat1label: "Langues supportées",
-  stat2: "24/7", stat2label: "Réservation en ligne",
-},
+    title: "ImmiNexus Consultants",
+    category: "Immigration Website",
+    desc:
+      "Professional immigration consulting website with multilingual support, online booking system, automated PDF confirmations, and a fully responsive experience.",
+    tags: ["Next.js", "React", "Vercel", "PDF", "Multilingual"],
+    accent: "#1B7A3E",
+    bg: "#F4FBF6",
+    screens: [
+      "Homepage",
+      "Immigration Services",
+      "Consultation Booking",
+    ],
+    stat1: "3",
+    stat1label: "Languages",
+    stat2: "24/7",
+    stat2label: "Online booking",
+  },
+
   {
     title: "Skizzly",
-    category: "Application Web",
-    desc: "Plateforme innovante d'échange de compétences entre utilisateurs. Matching intelligent, profils détaillés et système de réputation intégré.",
+    category: "Web Application",
+    desc:
+      "Modern skill-sharing platform with intelligent user matching, messaging system, detailed profiles, and reputation-based interactions.",
     tags: ["Next.js", "MongoDB", "Python"],
     accent: "#C9A84C",
     bg: "#FDF8F0",
-    screens: [
-      { label: "Skills Discovery", color: "#fff", border: "#e8e0d0" },
-      { label: "Skill Matches", color: "#fff", border: "#e8e0d0" },
-      { label: "Messages", color: "#fff", border: "#e8e0d0" },
-    ],
-    stat1: "90", stat1label: "Skills disponibles",
-    stat2: "98%", stat2label: "Match accuracy",
+    screens: ["Discover Skills", "Skill Matches", "Messaging"],
+    stat1: "90+",
+    stat1label: "Available skills",
+    stat2: "98%",
+    stat2label: "Match accuracy",
   },
+
   {
-    title: "e-Gouvernance",
-    category: "Plateforme Citoyenne",
-    desc: "Plateforme de réclamations citoyennes avec dashboard admin et traitement automatisé des demandes par intelligence artificielle.",
+    title: "e-Governance",
+    category: "Citizen Platform",
+    desc:
+      "AI-powered citizen complaint management platform with automated request processing, analytics dashboard, and multilingual accessibility.",
     tags: ["React", "FastAPI", "AI"],
     accent: "#2563EB",
-    bg: "#F0F5FF",
-    screens: [
-      { label: "Accueil citoyen", color: "#fff", border: "#dce8ff" },
-      { label: "Dashboard Admin", color: "#fff", border: "#dce8ff" },
-      { label: "Analyse IA", color: "#fff", border: "#dce8ff" },
-    ],
-    stat1: "157", stat1label: "Réclamations traitées",
-    stat2: "3", stat2label: "Langues supportées",
+    bg: "#F3F7FF",
+    screens: ["Citizen Portal", "Admin Dashboard", "AI Analysis"],
+    stat1: "157+",
+    stat1label: "Requests processed",
+    stat2: "3",
+    stat2label: "Languages",
   },
-  
 ];
 
 export default function Portfolio() {
@@ -73,19 +75,20 @@ export default function Portfolio() {
             padding: "6px 16px", borderRadius: "999px",
             letterSpacing: "2.5px", marginBottom: "20px",
           }}>
-            NOS RÉALISATIONS
+            Our Projects
           </span>
           <h2 style={{
             fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 800,
             color: "#111", lineHeight: 1.15, marginBottom: "16px",
             letterSpacing: "-0.5px",
           }}>
-            Des projets qui parlent
+            Real projects. Real
             <br />
-            <span style={{ color: "#1B7A3E" }}>d&apos;eux-mêmes</span>
+            <span style={{ color: "#1B7A3E" }}>results.</span>
           </h2>
           <p style={{ color: "#888", fontSize: "17px", maxWidth: "480px", margin: "0 auto" }}>
-            Chaque projet est unique. Voici une sélection de nos réalisations récentes.
+            Every business is different. Here’s a selection of modern digital
+            experiences we’ve designed and developed.
           </p>
         </motion.div>
 
@@ -234,7 +237,7 @@ export default function Portfolio() {
             padding: "14px 36px", borderRadius: "999px",
             textDecoration: "none",
           }}>
-            Démarrer un projet
+            Start a project
           </Link>
         </div>
       </div>

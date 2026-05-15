@@ -8,21 +8,41 @@ import Link from "next/link";
 const services = [
   {
     icon: Monitor,
-    title: "Site Web",
-    desc: "Un site professionnel qui reflète votre image de marque et convertit vos visiteurs en clients.",
-    features: ["Design sur mesure", "100% responsive", "SEO optimisé", "Livraison rapide"],
+    title: "Business Websites",
+    desc:
+      "Professional websites designed to strengthen your brand and convert visitors into clients.",
+    features: [
+      "Custom design",
+      "Fully responsive",
+      "SEO optimized",
+      "Fast delivery",
+    ],
   },
+
   {
     icon: ShoppingCart,
-    title: "E-commerce",
-    desc: "Une boutique en ligne complète avec gestion des produits, paiements et tableau de bord.",
-    features: ["Paiement sécurisé", "Gestion catalogue", "Dashboard admin", "Multi-langues"],
+    title: "E-Commerce",
+    desc:
+      "Modern online stores with secure payments, product management, and scalable infrastructure.",
+    features: [
+      "Secure payments",
+      "Product dashboard",
+      "Admin panel",
+      "Multilingual support",
+    ],
   },
+
   {
     icon: Wrench,
-    title: "Maintenance",
-    desc: "Votre site toujours à jour, sécurisé et performant avec un support humain réactif.",
-    features: ["Mises à jour", "Sauvegardes", "Support 24/7", "Rapport analytics"],
+    title: "Maintenance & Support",
+    desc:
+      "Keep your website secure, updated, and optimized with reliable long-term support.",
+    features: [
+      "Website updates",
+      "Backups & security",
+      "Technical support",
+      "Performance monitoring",
+    ],
   },
 ];
 
@@ -46,19 +66,20 @@ export default function Services() {
             padding: "6px 16px", borderRadius: "999px",
             letterSpacing: "2.5px", marginBottom: "20px",
           }}>
-            NOS SERVICES
+            OUR SERVICES
           </span>
           <h2 style={{
             fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 800,
             color: "#111", lineHeight: 1.15, marginBottom: "16px",
             letterSpacing: "-0.5px",
           }}>
-            Tout ce dont vous avez besoin
+           Everything you need
             <br />
-            <span style={{ color: "#1B7A3E" }}>pour grandir en ligne</span>
+            <span style={{ color: "#1B7A3E" }}>to grow online</span>
           </h2>
           <p style={{ color: "#888", fontSize: "17px", maxWidth: "520px", margin: "0 auto", lineHeight: 1.7 }}>
-            Des solutions digitales clé-en-main, livrées à temps, avec un support humain basé au Maroc.
+           Modern digital solutions built for businesses, startups, and brands
+            looking to establish a strong online presence.
           </p>
         </motion.div>
 
@@ -123,7 +144,7 @@ export default function Services() {
             padding: "14px 36px", borderRadius: "999px",
             textDecoration: "none",
           }}>
-            Démarrer un projet
+            Start a project
           </Link>
         </motion.div>
       </div>

@@ -2,25 +2,48 @@ import Link from "next/link";
 
 const options = [
   {
-    type: "Site Vitrine Starter",
-    delay: "7–10 jours",
-    features: ["3–5 pages", "Design responsive", "SEO de base", "Formulaire contact"],
+    type: "Starter Business Website",
+    delay: "7–10 days",
+    features: [
+      "3–5 pages",
+      "Responsive design",
+      "Basic SEO",
+      "Contact form",
+    ],
   },
+
   {
-    type: "Site Vitrine Pro",
-    delay: "10–14 jours",
-    features: ["5–10 pages", "Blog intégré", "Google Analytics", "3 révisions"],
+    type: "Professional Website",
+    delay: "10–14 days",
+    features: [
+      "5–10 pages",
+      "Integrated blog",
+      "Google Analytics",
+      "3 revisions",
+    ],
   },
+
   {
-    type: "E-commerce",
-    delay: "14–21 jours",
-    features: ["Boutique complète", "Paiement en ligne", "Gestion catalogue", "Dashboard admin"],
+    type: "E-Commerce Store",
+    delay: "14–21 days",
+    features: [
+      "Complete online store",
+      "Online payments",
+      "Product management",
+      "Admin dashboard",
+    ],
     popular: true,
   },
+
   {
-    type: "Sur Mesure",
-    delay: "À définir",
-    features: ["Application web", "Fonctionnalités custom", "Intégrations API", "Support dédié"],
+    type: "Custom Solution",
+    delay: "Custom timeline",
+    features: [
+      "Web application",
+      "Custom features",
+      "API integrations",
+      "Dedicated support",
+    ],
   },
 ];
 
@@ -36,19 +59,19 @@ export default function DevisPage() {
             padding: "6px 16px", borderRadius: "999px",
             letterSpacing: "2.5px", marginBottom: "20px",
           }}>
-            DEVIS GRATUIT
+            Free Quote
           </span>
           <h1 style={{
             fontSize: "clamp(36px, 5vw, 56px)", fontWeight: 800,
             color: "#111", lineHeight: 1.15, marginBottom: "16px",
             letterSpacing: "-1px",
           }}>
-            Choisissez votre
+            Choose your
             <br />
-            <span style={{ color: "#1B7A3E" }}>formule.</span>
+            <span style={{ color: "#1B7A3E" }}>plan.</span>
           </h1>
           <p style={{ color: "#888", fontSize: "17px", maxWidth: "480px", margin: "0 auto", lineHeight: 1.7 }}>
-            Contactez-nous pour un devis personnalisé gratuit. Réponse en moins de 24h.
+            Contact us for a personalized free quote. Response in less than 24h.
           </p>
         </div>
 
@@ -68,7 +91,7 @@ export default function DevisPage() {
                   fontSize: "10px", fontWeight: 700, padding: "4px 14px",
                   borderRadius: "999px", letterSpacing: "1.5px", whiteSpace: "nowrap",
                 }}>
-                  POPULAIRE
+                  POPULAR
                 </span>
               )}
               <h3 style={{
@@ -81,7 +104,7 @@ export default function DevisPage() {
                 fontSize: "12px", marginBottom: "24px",
                 color: opt.popular ? "rgba(255,255,255,0.6)" : "#aaa",
               }}>
-                Livraison : {opt.delay}
+                Delivery : {opt.delay}
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: "10px" }}>
                 {opt.features.map((f) => (
@@ -105,7 +128,7 @@ export default function DevisPage() {
                 backgroundColor: opt.popular ? "white" : "#E8F5ED",
                 color: opt.popular ? "#1B7A3E" : "#1B7A3E",
               }}>
-                Choisir cette formule
+                Choose this plan
               </Link>
             </div>
           ))}
@@ -117,10 +140,10 @@ export default function DevisPage() {
           textAlign: "center",
         }}>
           <h2 style={{ fontWeight: 700, fontSize: "22px", color: "#111", marginBottom: "12px" }}>
-            Vous avez un projet sur mesure ?
+            Do you have a custom project?
           </h2>
           <p style={{ color: "#888", fontSize: "15px", marginBottom: "24px", maxWidth: "480px", margin: "0 auto 24px" }}>
-            Décrivez-nous votre projet et nous vous préparons un devis personnalisé gratuitement.
+            Describe your project and we will prepare a personalized quote for you free of charge.
           </p>
           <Link href="/contact" style={{
             display: "inline-block",
@@ -129,7 +152,7 @@ export default function DevisPage() {
             padding: "14px 36px", borderRadius: "999px",
             textDecoration: "none",
           }}>
-            Demander votre devis
+            Request Your Quote
           </Link>
         </div>
       </div>
