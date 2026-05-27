@@ -10,8 +10,8 @@ export default function CTA() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section style={{ padding: "80px 24px", backgroundColor: "#F8FDF9" }}>
-      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+    <section style={{ padding: "80px 0", backgroundColor: "#F8FDF9" }}>
+      <div className="site-shell" style={{ maxWidth: "980px" }}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ export default function CTA() {
           transition={{ duration: 0.6 }}
           style={{
             backgroundColor: "#0a1a0f",
-            borderRadius: "24px",
+            borderRadius: "8px",
             padding: "80px 48px",
             textAlign: "center",
             position: "relative",
@@ -27,7 +27,6 @@ export default function CTA() {
             width: "100%",
           }}
         >
-          {/* Grid bg */}
           <div style={{ position: "absolute", inset: 0, opacity: 0.15 }}>
             <svg style={{ width: "100%", height: "100%" }} xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -39,53 +38,51 @@ export default function CTA() {
             </svg>
           </div>
 
-          {/* Glow */}
           <div style={{
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-            width: "300px", height: "150px",
-            backgroundColor: "rgba(27,122,62,0.3)", filter: "blur(60px)",
+            position: "absolute",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "300px",
+            height: "150px",
+            backgroundColor: "rgba(27,122,62,0.3)",
+            filter: "blur(60px)",
           }} />
 
           <div style={{ position: "relative", zIndex: 10 }}>
-            <span style={{
-              display: "inline-block",
+            <span className="eyebrow" style={{
               backgroundColor: "rgba(27,122,62,0.2)",
-              color: "#52C27A", fontSize: "11px", fontWeight: 700,
-              padding: "6px 16px", borderRadius: "999px",
+              color: "#52C27A",
               border: "1px solid rgba(27,122,62,0.3)",
-              letterSpacing: "2px", marginBottom: "24px",
+              marginBottom: "24px",
             }}>
-              Ready to get started?
+              Ready to build?
             </span>
 
             <h2 style={{
               fontSize: "clamp(32px, 4vw, 52px)",
-              fontWeight: 800, color: "white",
-              lineHeight: 1.2, marginBottom: "20px",
-              letterSpacing: "-0.5px",
+              fontWeight: 850,
+              color: "white",
+              lineHeight: 1.2,
+              marginBottom: "20px",
             }}>
-              Your next website<br />
-              <span style={{ color: "#52C27A" }}> starts here.</span>
+              Turn your business into<br />
+              <span style={{ color: "#52C27A" }}>a site people trust.</span>
             </h2>
 
             <p style={{
-              color: "rgba(255,255,255,0.5)",
-              fontSize: "17px", lineHeight: 1.7,
-              maxWidth: "480px",
+              color: "rgba(255,255,255,0.58)",
+              fontSize: "17px",
+              lineHeight: 1.7,
+              maxWidth: "520px",
               margin: "0 auto 40px",
             }}>
-              Get a free quote within 24 hours. No commitment, no hidden fees —
-              just a modern website designed to help your business grow online.
+              Tell us what you are building and we will map the pages, features,
+              and next steps for a site that looks professional from day one.
             </p>
 
-            <Link href="/contact" style={{
-              display: "inline-flex", alignItems: "center", gap: "10px",
-              backgroundColor: "#1B7A3E", color: "white",
-              fontWeight: 700, fontSize: "16px",
-              padding: "16px 40px", borderRadius: "999px",
-              textDecoration: "none",
-            }}>
-              Get Your Free Quote
+            <Link href="/devis" className="button-primary">
+              Get your free quote
               <ArrowRight size={18} />
             </Link>
           </div>

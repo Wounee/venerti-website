@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "About" },
+  { href: "/a-propos", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/quote", label: "Free Quote" },
+  { href: "/devis", label: "Free Quote" },
 ];
 
 const services = [
@@ -34,12 +34,12 @@ export default function Footer() {
                 </svg>
               </div>
               <div style={{ lineHeight: 1 }}>
-                <div style={{ fontWeight: 700, fontSize: "18px", color: "white" }}>Venerti</div>
+                <div style={{ fontWeight: 700, fontSize: "18px", color: "white" }}>Venertiweb</div>
                 <div style={{ fontSize: "9px", fontWeight: 600, letterSpacing: "3px", color: "#52C27A", textTransform: "uppercase", marginTop: "2px" }}>Web Design</div>
               </div>
             </Link>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px", lineHeight: 1.8, marginBottom: "24px", maxWidth: "260px" }}>
-              We build modern digital experiences and high-performance websites designed to help businesses grow online.
+              We build sharp, high-performance websites that help businesses look credible and win better inquiries.
             </p>
             <div style={{ display: "flex", gap: "10px" }}>
              {[
@@ -153,7 +153,7 @@ export default function Footer() {
           flexWrap: "wrap", gap: "12px",
         }}>
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "13px" }}>
-            © 2026 Venerti Web Design. All rights reserved.
+            © 2026 Venertiweb. All rights reserved.
           </p>
         </div>
       </div>

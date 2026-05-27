@@ -4,8 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,25 +13,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
- title: "Venerti Web Design — Modern websites built for growth",
-description:
-  "Web agency specialized in professional websites, e-commerce platforms, and custom digital solutions for modern businesses.",
-keywords:
-  "web agency, professional website, web design, ecommerce website, modern websites, digital solutions, business website",
+  title: "Venertiweb - Modern websites built for growth",
+  description:
+    "Venertiweb is a web design agency building professional websites, e-commerce platforms, and custom digital solutions for modern businesses.",
+  keywords:
+    "Venertiweb, web agency, professional website, web design, ecommerce website, modern websites, digital solutions, business website",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <Navbar />
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

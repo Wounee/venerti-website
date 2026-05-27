@@ -72,7 +72,7 @@ export default function Navbar() {
               transition: "color 0.3s",
               letterSpacing: "-0.5px",
             }}>
-              Venerti
+              Venertiweb
             </span>
             <span style={{
               fontSize: "9px",
