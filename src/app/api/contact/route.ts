@@ -6,11 +6,11 @@ import { Resend } from "resend";
 const contactSchema = z.object({
   name: z.string().min(2, "Nom trop court").max(100),
   email: z.string().email("Email invalide"),
-  phone: z.string().optional(),
-  subject: z.string().min(3).max(200),
-  message: z.string().min(10, "Message trop Court").max(2000),
+  phone: z.string().optional().default(""),
+  subject: z.string().min(3, "Sujet trop court").max(200),
+  message: z.string().min(10, "Message trop court").max(2000),
+  countryCode: z.string().optional().default("+212"),
 });
-
 const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
 
 function rateLimit(ip: string): boolean {
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(resendApiKey);
     await resend.emails.send({
       from: "Venerti Contact <onboarding@resend.dev>",
-      to: contactEmail,
+to: [process.env.CONTACT_EMAIL!],
       subject: `Nouveau message : ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f8fdf9; border-radius: 16px;">
