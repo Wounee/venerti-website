@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, CheckCircle, AlertCircle } from "lucide-react";
 
 const countryCodes = [
   { code: "+1", country: "US" },

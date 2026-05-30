@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import clientPromise from "@/lib/mongodb";
+import { getMongoClient } from "@/lib/mongodb";
 import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nom trop court").max(100),
@@ -51,9 +49,17 @@ export async function POST(req: NextRequest) {
     }
 
     const { name, email, phone, subject, message } = result.data;
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const contactEmail = process.env.CONTACT_EMAIL;
 
-    // Save to MongoDB
-    const client = await clientPromise;
+    if (!resendApiKey || !contactEmail) {
+      return NextResponse.json(
+        { error: "Email service is not configured." },
+        { status: 500 }
+      );
+    }
+
+    const client = await getMongoClient();
     const db = client.db("venerti");
     await db.collection("contacts").insertOne({
       name,
@@ -66,10 +72,10 @@ export async function POST(req: NextRequest) {
       ip,
     });
 
-    // Send email via Resend
+    const resend = new Resend(resendApiKey);
     await resend.emails.send({
-     from: "Venerti Contact <onboarding@resend.dev>",
-to: [process.env.CONTACT_EMAIL!],
+      from: "Venerti Contact <onboarding@resend.dev>",
+      to: [contactEmail],
       subject: `Nouveau message : ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f8fdf9; border-radius: 16px;">

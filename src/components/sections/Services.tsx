@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, ShoppingCart, Smartphone, Search, Paintbrush, Wrench } from "lucide-react";
+import { ArrowRight, Monitor, ShoppingCart, Wrench } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -10,7 +10,7 @@ const services = [
     icon: Monitor,
     title: "Business Websites",
     desc:
-      "Professional websites designed to strengthen your brand and convert visitors into clients.",
+      "A polished website that explains your offer, earns trust, and turns visitors into real inquiries.",
     features: [
       "Custom design",
       "Fully responsive",
@@ -23,7 +23,7 @@ const services = [
     icon: ShoppingCart,
     title: "E-Commerce",
     desc:
-      "Modern online stores with secure payments, product management, and scalable infrastructure.",
+      "Online stores that feel premium, stay easy to manage, and guide customers from product to checkout.",
     features: [
       "Secure payments",
       "Product dashboard",
@@ -36,7 +36,7 @@ const services = [
     icon: Wrench,
     title: "Maintenance & Support",
     desc:
-      "Keep your website secure, updated, and optimized with reliable long-term support.",
+      "Ongoing improvements, fixes, backups, and support so your website keeps working after launch.",
     features: [
       "Website updates",
       "Backups & security",
@@ -51,8 +51,8 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section style={{ padding: "100px 24px", backgroundColor: "#F8FDF9" }} id="services">
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+    <section style={{ padding: "100px 0", backgroundColor: "#F8FDF9" }} id="services">
+      <div className="site-shell">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -60,26 +60,18 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           style={{ textAlign: "center", marginBottom: "64px" }}
         >
-          <span style={{
-            display: "inline-block", backgroundColor: "#E8F5ED",
-            color: "#1B7A3E", fontSize: "11px", fontWeight: 700,
-            padding: "6px 16px", borderRadius: "999px",
-            letterSpacing: "2.5px", marginBottom: "20px",
-          }}>
+          <span className="eyebrow" style={{ backgroundColor: "#E8F5ED", color: "#1B7A3E", marginBottom: "20px" }}>
             OUR SERVICES
           </span>
-          <h2 style={{
-            fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 800,
-            color: "#111", lineHeight: 1.15, marginBottom: "16px",
-            letterSpacing: "-0.5px",
-          }}>
-           Everything you need
+          <h2 className="section-heading" style={{ marginBottom: "16px" }}>
+            Everything your website needs
             <br />
-            <span style={{ color: "#1B7A3E" }}>to grow online</span>
+            <span style={{ color: "#1B7A3E" }}>to win better clients</span>
           </h2>
-          <p style={{ color: "#888", fontSize: "17px", maxWidth: "520px", margin: "0 auto", lineHeight: 1.7 }}>
-           Modern digital solutions built for businesses, startups, and brands
-            looking to establish a strong online presence.
+          <p className="section-copy" style={{ maxWidth: "590px", margin: "0 auto" }}>
+            From the first impression to the final form submission, every part
+            of the site is planned to make your business feel clear, credible,
+            and easy to contact.
           </p>
         </motion.div>
 
@@ -90,9 +82,9 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+              className="card"
               style={{
-                backgroundColor: "white", borderRadius: "20px",
-                padding: "32px", border: "1px solid #F0F0F0",
+                padding: "32px",
                 transition: "all 0.3s", cursor: "default",
               }}
               onMouseEnter={e => {
@@ -107,7 +99,7 @@ export default function Services() {
               }}
             >
               <div style={{
-                width: "48px", height: "48px", borderRadius: "14px",
+                width: "48px", height: "48px", borderRadius: "8px",
                 backgroundColor: "#E8F5ED", display: "flex",
                 alignItems: "center", justifyContent: "center", marginBottom: "20px",
               }}>
@@ -137,14 +129,9 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.8 }}
           style={{ textAlign: "center", marginTop: "48px" }}
         >
-          <Link href="/contact" style={{
-            display: "inline-flex", alignItems: "center", gap: "8px",
-            backgroundColor: "#1B7A3E", color: "white",
-            fontWeight: 600, fontSize: "15px",
-            padding: "14px 36px", borderRadius: "999px",
-            textDecoration: "none",
-          }}>
-            Start a project
+          <Link href="/devis" className="button-primary">
+            Plan my website
+            <ArrowRight size={18} />
           </Link>
         </motion.div>
       </div>

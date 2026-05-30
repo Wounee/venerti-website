@@ -5,28 +5,28 @@ import { useRef, useEffect, useState } from "react";
 
 const stats = [
   {
-    value: 24,
-    suffix: "/7",
-    label: "Online Presence",
-    desc: "Websites available anytime, on any device",
+    value: 5,
+    suffix: "+",
+    label: "Launch essentials",
+    desc: "Design, build, forms, speed, SEO, and mobile QA",
   },
   {
     value: 21,
     suffix: " days",
-    label: "Average Delivery",
-    desc: "From project kickoff to launch",
+    label: "Typical delivery",
+    desc: "A focused timeline from kickoff to launch",
   },
   {
     value: 100,
     suffix: "%",
-    label: "Responsive Design",
+    label: "Responsive design",
     desc: "Built for mobile, tablet, and desktop",
   },
   {
     value: 3,
     suffix: "+",
-    label: "Core Services",
-    desc: "Websites, e-commerce, and maintenance",
+    label: "Growth paths",
+    desc: "Websites, e-commerce, support, and upgrades",
   },
 ];
 
@@ -60,8 +60,8 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section style={{ padding: "80px 24px", backgroundColor: "white", borderTop: "1px solid #E8F5ED", borderBottom: "1px solid #E8F5ED" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+    <section style={{ padding: "80px 0", backgroundColor: "white", borderTop: "1px solid #E8F5ED", borderBottom: "1px solid #E8F5ED" }}>
+      <div className="site-shell">
         <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }} className="stats-grid">
           {stats.map((stat, i) => (
             <motion.div
@@ -71,7 +71,7 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               style={{
                 textAlign: "center", padding: "32px 16px",
-                borderRadius: "20px", transition: "background 0.3s",
+                borderRadius: "8px", transition: "background 0.3s",
               }}
               onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#F8FDF9")}
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = "transparent")}
